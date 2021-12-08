@@ -1,0 +1,18 @@
+<Project>
+  
+  <ItemGroup>
+    <Reference Include="Holism.Collaboration.Models">
+      <HintPath>/HolismDotNet/Collaboration/Packages/Holism.Collaboration.Models.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Holism.Collaboration.DataAccess">
+      <HintPath>/HolismDotNet/Collaboration/Packages/Holism.Collaboration.DataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Holism.Collaboration.Business">
+      <HintPath>/HolismDotNet/Collaboration/Packages/Holism.Collaboration.Business.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
