@@ -1,53 +1,44 @@
-using Holism.Collaboration.Models;
-using Holism.DataAccess;
+namespace Holism.Collaboration.DataAccess;
 
-namespace Holism.Collaboration.DataAccess
+public class Repository
 {
-    public class Repository
+    public static Repository<AttachedFile> AttachedFile
     {
-        public static Repository<Ticket> Ticket
+        get
         {
-            get
-            {
-                return new Holism.DataAccess.Repository<Ticket
-                >(new CollaborationContext());
-            }
+            return new Repository<AttachedFile>(new CollaborationContext());
         }
+    }
 
-        public static Repository<Post> Post
+    public static Repository<PostHtml> PostHtml
+    {
+        get
         {
-            get
-            {
-                return new Holism.DataAccess.Repository<Post
-                >(new CollaborationContext());
-            }
+            return new Repository<PostHtml>(new CollaborationContext());
         }
+    }
 
-        public static Repository<PostHtml> PostHtml
+    public static Repository<Post> Post
+    {
+        get
         {
-            get
-            {
-                return new Holism.DataAccess.Repository<PostHtml
-                >(new CollaborationContext());
-            }
+            return new Repository<Post>(new CollaborationContext());
         }
+    }
 
-        public static Repository<AttachedFile> AttachedFile
+    public static Repository<Ticket> Ticket
+    {
+        get
         {
-            get
-            {
-                return new Holism.DataAccess.Repository<AttachedFile
-                >(new CollaborationContext());
-            }
+            return new Repository<Ticket>(new CollaborationContext());
         }
+    }
 
-        public static Repository<TicketView> TicketView
+    public static Repository<TicketView> TicketView
+    {
+        get
         {
-            get
-            {
-                return new Holism.DataAccess.Repository<TicketView
-                >(new CollaborationContext());
-            }
+            return new Repository<TicketView>(new CollaborationContext());
         }
     }
 }
