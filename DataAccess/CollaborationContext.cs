@@ -21,6 +21,7 @@ namespace Holism.Collaboration.DataAccess
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            
             base.OnModelCreating(builder);
         }
     }
