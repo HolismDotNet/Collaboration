@@ -1,6 +1,13 @@
-// namespace Collaboration.Business;
+using Holism.Collaboration.Models;
+using Holism.Collaboration.DataAccess;
 
-// public class InvitationBusiness : Bsuiness<Invitation, Invitation>
-// {
+namespace Holism.Collaboration.Business;
 
-// }
+public class InvitationBusiness : Business<Invitation, Invitation>
+{
+    protected override Repository<Invitation> WriteRepository =>
+        Repository.Invitation;
+
+    protected override ReadRepository<Invitation> ReadRepository =>
+        Repository.Invitation;
+}
