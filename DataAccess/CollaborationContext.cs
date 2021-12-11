@@ -6,7 +6,7 @@ public class CollaborationContext : DatabaseContext
 
     public DbSet<Invitation> Invitations { get; set; }
 
-    public DbSet<TicketView> TicketViews { get; set; }
+    public DbSet<InvitationView> InvitationViews { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

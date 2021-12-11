@@ -25,5 +25,13 @@
                 }
             ]
         }
+    ],
+    "views": [
+        {
+            "name": "InvitationViews",
+            "query": [
+                "select newid() as Temp"
+            ]
+        }
     ]
 }

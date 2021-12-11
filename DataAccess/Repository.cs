@@ -10,11 +10,11 @@ public class Repository
         }
     }
 
-    public static Repository<TicketView> TicketView
+    public static Repository<InvitationView> InvitationView
     {
         get
         {
-            return new Repository<TicketView>(new CollaborationContext());
+            return new Repository<InvitationView>(new CollaborationContext());
         }
     }
 }
