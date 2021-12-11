@@ -2,35 +2,11 @@ namespace Holism.Collaboration.DataAccess;
 
 public class Repository
 {
-    public static Repository<AttachedFile> AttachedFile
+    public static Repository<Invitation> Invitation
     {
         get
         {
-            return new Repository<AttachedFile>(new CollaborationContext());
-        }
-    }
-
-    public static Repository<PostHtml> PostHtml
-    {
-        get
-        {
-            return new Repository<PostHtml>(new CollaborationContext());
-        }
-    }
-
-    public static Repository<Post> Post
-    {
-        get
-        {
-            return new Repository<Post>(new CollaborationContext());
-        }
-    }
-
-    public static Repository<Ticket> Ticket
-    {
-        get
-        {
-            return new Repository<Ticket>(new CollaborationContext());
+            return new Repository<Invitation>(new CollaborationContext());
         }
     }
 

@@ -1,23 +1,21 @@
 namespace Holism.Collaboration.Models;
 
-public class Ticket : IEntity
+public class Invitation : IGuidEntity
 {
-    public Ticket()
+    public Invitation()
     {
         RelatedItems = new ExpandoObject();
     }
 
     public long Id { get; set; }
 
-    public Guid UserGuid { get; set; }
+    public Guid Guid { get; set; }
 
-    public string Title { get; set; }
+    public Guid InvitingUserGuid { get; set; }
 
-    public long PriorityId { get; set; }
+    public string InvitedEmail { get; set; }
 
     public DateTime UtcDate { get; set; }
-
-    public long StateId { get; set; }
 
     public dynamic RelatedItems { get; set; }
 }

@@ -2,137 +2,27 @@
     "name": "Collaboration",
     "tables": [
         {
-            "name": "States",
-            "isEnum": true,
-            "enumItems": [
-                {
-                    "key": "New",
-                    "value": 1
-                },
-                {
-                    "key": "WaitingForBusinessResponse",
-                    "value": 2
-                },
-                {
-                    "key": "WaitingForUserResponse",
-                    "value": 3
-                },
-                {
-                    "key": "UnderInvestigation",
-                    "value": 4
-                },
-                {
-                    "key": "Closed",
-                    "value": 5
-                }
-            ]
-        },
-        {
-            "name": "Priorities",
-            "isEnum": true,
-            "enumItems": [
-                {
-                    "key": "High",
-                    "value": 1
-                },
-                {
-                    "key": "Medium",
-                    "value": 2
-                },
-                {
-                    "key": "Low",
-                    "value": 3
-                }
-            ]
-        },
-        {
-            "name": "Tickets",
+            "name": "Invitations",
+            "hasGuid": true,
             "columns": [
                 {
-                    "name": "UserGuid"
+                    "name": "InvitingUserGuid"
                 },
                 {
-                    "name": "Title"
-                },
-                {
-                    "name": "PriorityId"
+                    "name": "InvitedEmail"
                 },
                 {
                     "name": "Date"
-                },
-                {
-                    "name": "StateId"
                 }
-            ]
-        },
-        {
-            "name": "Posts",
-            "columns": [
+            ],
+            "indexes": [
                 {
-                    "name": "TicketId"
-                },
-                {
-                    "name": "Date"
-                },
-                {
-                    "name": "IsSystemPost",
-                    "type": "boolean",
-                    "isNullable": true
+                    "columns": [
+                        "InvitingUserGuid",
+                        "InvitedEmail"
+                    ],
+                    "isUnique": true
                 }
-            ]
-        },
-        {
-            "name": "PostHtmls",
-            "oneToOneWith": "Posts",
-            "columns": [
-                {
-                    "name": "Html",
-                    "type": "longText"
-                }
-            ]
-        },
-        {
-            "name": "AttachedFiles",
-            "columns": [
-                {
-                    "name": "PostId"
-                },
-                {
-                    "name": "FileGuid"
-                },
-                {
-                    "name": "FileExtension"
-                }
-            ]
-        }
-    ],
-    "views": [
-        {
-            "name": "TicketViews",
-            "query": [
-                "select ",
-                "    Tickets.Id,",
-                "    Tickets.UserGuid,",
-                "    Accounts.dbo.UserViews.DisplayName as [User],",
-                "    Tickets.Title,",
-                "    Tickets.[Date],",
-                "    Tickets.PriorityId,",
-                "    Priorities.[Key] as PriorityKey,",
-                "    Tickets.StateId,",
-                "    States.[Key] as StateKey,",
-                "    (",
-                "        select top 1 [Date]",
-                "        from Posts ",
-                "        where TicketId = Tickets.Id",
-                "        order by [Date] desc",
-                "    ) as LatestPostDate",
-                "from Tickets ",
-                "inner join Priorities ",
-                "on  Priorities.Id= Tickets.PriorityId",
-                "inner join States ",
-                "on  States.Id= Tickets.StateId",
-                "left join Accounts.dbo.UserViews",
-                "on Tickets.UserGuid = Accounts.dbo.UserViews.[Guid]"
             ]
         }
     ]
