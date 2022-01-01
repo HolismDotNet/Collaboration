@@ -13,6 +13,6 @@ public class InvitationBusiness : Business<InvitationView, Invitation>
 
     protected override void PreCreation(Invitation invitation)
     {
-        invitation.UtcDate = DateTime.Now.ToUniversalTime();
+        invitation.UtcDate = UniversalDateTime.Now;
     }
 }
