@@ -1,20 +1,20 @@
-namespace Holism.Collaboration.DataAccess;
+namespace Collaboration;
 
 public class Repository
 {
-    public static Repository<Invitation> Invitation
+    public static Repository<Collaboration.Invitation> Invitation
     {
         get
         {
-            return new Repository<Invitation>(new CollaborationContext());
+            return new Repository<Collaboration.Invitation>(new CollaborationContext());
         }
     }
 
-    public static Repository<InvitationView> InvitationView
+    public static Repository<Collaboration.InvitationView> InvitationView
     {
         get
         {
-            return new Repository<InvitationView>(new CollaborationContext());
+            return new Repository<Collaboration.InvitationView>(new CollaborationContext());
         }
     }
 }

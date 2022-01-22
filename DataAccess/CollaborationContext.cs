@@ -1,4 +1,4 @@
-namespace Holism.Collaboration.DataAccess;
+namespace Collaboration;
 
 public class CollaborationContext : DatabaseContext
 {

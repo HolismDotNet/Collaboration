@@ -1,4 +1,4 @@
-namespace Holism.Collaboration.Models;
+namespace Collaboration;
 
 public class Invitation : IGuidEntity
 {
