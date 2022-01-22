@@ -1,7 +1,4 @@
-
-
-
-namespace Holism.Collaboration.Business;
+namespace Collaboration;
 
 public class InvitationBusiness : Business<InvitationView, Invitation>
 {

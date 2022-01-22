@@ -1,4 +1,4 @@
-namespace Holism.Collaboration.UserApi;
+namespace Collaboration;
 
 public class InvitationController : Controller<InvitationView, Invitation>
 {
