@@ -2,9 +2,9 @@ namespace Collaboration;
 
 public class InvitationBusiness : Business<InvitationView, Invitation>
 {
-    protected override Repository<Invitation> WriteRepository => RepositoryInvitation;
+    protected override Repository<Invitation> WriteRepository => Repository.Invitation;
 
-    protected override ReadRepository<InvitationView> ReadRepository => RepositoryInvitationView;
+    protected override ReadRepository<InvitationView> ReadRepository => Repository.InvitationView;
 
     protected override void PreCreation(Invitation invitation)
     {
