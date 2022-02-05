@@ -1,6 +1,6 @@
 namespace Collaboration;
 
-public class Invitation : IGuidEntity
+public class Invitation : IEntity, IGuid
 {
     public Invitation()
     {
