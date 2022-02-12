@@ -2,19 +2,19 @@ namespace Collaboration;
 
 public class Repository
 {
-    public static Repository<Collaboration.Invitation> Invitation
+    public static Write<Collaboration.Invitation> Invitation
     {
         get
         {
-            return new Repository<Collaboration.Invitation>(new CollaborationContext());
+            return new Write<Collaboration.Invitation>(new CollaborationContext());
         }
     }
 
-    public static Repository<Collaboration.InvitationView> InvitationView
+    public static Write<Collaboration.InvitationView> InvitationView
     {
         get
         {
-            return new Repository<Collaboration.InvitationView>(new CollaborationContext());
+            return new Write<Collaboration.InvitationView>(new CollaborationContext());
         }
     }
 }
