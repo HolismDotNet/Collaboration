@@ -21,7 +21,7 @@
                         "InvitingUserGuid",
                         "InvitedEmail"
                     ],
-                    "isUnique": true
+                    "unique": true
                 }
             ]
         }
