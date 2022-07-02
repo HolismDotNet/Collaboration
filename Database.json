@@ -30,7 +30,7 @@
         {
             "name": "InvitationViews",
             "query": [
-                "select uuid() as Temp"
+                "select 'hi' as Temp"
             ]
         }
     ]
